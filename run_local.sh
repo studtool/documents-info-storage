@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
-sudo ./image.sh run --rm -p 3306:3306 \
-    -e MYSQL_USER=user -e MYSQL_PASSWORD=password \
-    -e MYSQL_DATABASE=documents -e MYSQL_ALLOW_EMPTY_PASSWORD=true
+port="$1"
+user="$2"
+password="$3"
+db="$4"
+
+./image.sh run --rm -p ${port}:3306 \
+    -e MYSQL_USER=${user} -e MYSQL_PASSWORD=${password} \
+    -e MYSQL_DATABASE=${db} -e MYSQL_ALLOW_EMPTY_PASSWORD=true
