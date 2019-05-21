@@ -27,3 +27,11 @@ CREATE TABLE IF NOT EXISTS `update`
     document_id VARCHAR(36) REFERENCES `document` (id),
     timestamp   DATETIME
 );
+
+CREATE TABLE IF NOT EXISTS `content`
+(
+    document_id VARCHAR(36) PRIMARY KEY REFERENCES `document` (id),
+    position    BIGINT                NOT NULL,
+    type        ENUM ('text','image') NOT NULL,
+    data        BLOB                  NOT NULL
+);
