@@ -8,8 +8,7 @@ CREATE TABLE IF NOT EXISTS `document`
     id       VARCHAR(36) PRIMARY KEY,
     title    TEXT        NOT NULL,
     owner_id VARCHAR(36) NOT NULL REFERENCES `user` (id),
-    subject  TEXT        NOT NULL,
-    meta     JSON        NOT NULL
+    subject  TEXT        NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `permission`
