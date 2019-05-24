@@ -7,4 +7,4 @@ db="$4"
 
 ./image.sh run --rm -p ${port}:3306 \
     -e MYSQL_USER=${user} -e MYSQL_PASSWORD=${password} \
-    -e MYSQL_DATABASE=${db} -e MYSQL_ALLOW_EMPTY_PASSWORD=true
+    -e MYSQL_DATABASE=${db} -e MYSQL_ROOT_PASSWORD=${password}

@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `permission`
 (
     user_id     VARCHAR(36) REFERENCES `user` (id),
     document_id VARCHAR(36) REFERENCES `document` (id),
-    scope       ENUM ('read','write') NOT NULL,
+    scope       SMALLINT NOT NULL,
 
     CONSTRAINT permission_pk PRIMARY KEY (user_id, document_id)
 );
